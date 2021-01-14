@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/understock', { useNewUrlParser: true, useUnifiedTopology: true });
-const db = mongoose.connection;
+const db = mongoose.createConnection('mongodb://localhost/understock', { useNewUrlParser: true, useUnifiedTopology: true });
 
 const itemSchema = new mongoose.Schema({
   product_id: Number,
@@ -15,6 +14,6 @@ const itemSchema = new mongoose.Schema({
   viewEight_url: String,
   viewNine_url: String,
 });
-const Item = mongoose.model('Item', itemSchema);
+const Item = db.model('Item', itemSchema);
 
 module.exports = { Item, db };

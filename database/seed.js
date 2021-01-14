@@ -26,7 +26,7 @@ arrayBuilder();
 
 const insertItemPictures = () => {
   mongo.Item.create(itemsArr)
-    .then(() => mongo.db.disconnect());
+    .then(() => mongo.db.close());
 };
 
 insertItemPictures();

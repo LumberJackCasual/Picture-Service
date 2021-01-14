@@ -1,12 +1,9 @@
 /* eslint-disable no-console */
 const express = require('express');
 const bodyParser = require('body-parser');
-const mongo = require('../database/index.js');
 
 const app = express();
 const port = 3004;
-
-mongo.db.once('open', () => console.log('database connected'));
 
 app.use(bodyParser.json());
 app.use(express.static('./Client/public'));
