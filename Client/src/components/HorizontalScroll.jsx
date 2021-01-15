@@ -8,12 +8,13 @@ const HorizontalScroll = (props) => {
   //   viewOne_url: props.picture.viewOne_url,
   //   viewOneThumbnail_url: props.picture.viewOneThumbnail_url,
   // };
-  const singleItem = props.pictures[0];
-  const description = singleItem.description;
+  const singleItem = props.pictures;
+  //const description = singleItem.description;
+  console.log(singleItem);
 
   return (
     <div>
-      <p>{description}</p>
+      <p>hello from HorizontalScroll</p>
     </div>
   );
 

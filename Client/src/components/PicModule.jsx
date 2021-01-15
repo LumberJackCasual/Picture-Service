@@ -7,6 +7,8 @@ class PicModule extends React.Component {
     super(props);
     this.state = {
       pictures: [],
+      singleDescription: '',
+      singlePicture: ''
     };
   }
 
@@ -14,6 +16,9 @@ class PicModule extends React.Component {
     axios.get('/api/')
       .then((data) => {
         this.setState({ pictures: data.data });
+        console.log(this.state.pictures[0].description);
+        this.setState({ singleDescription: data.data[0].description});
+        this.setState({ singlePicture: data.data[0].viewOne_url})
       })
       .catch((err) => err);
   }
@@ -22,7 +27,8 @@ class PicModule extends React.Component {
     return (
       <div>
         <h4>!!Hello from PicModule.jsx!!</h4>
-        <HorizontalScroll picture={this.state.pictures} />
+        <p>{this.state.singleDescription}</p>
+        <img alt="one picture" src={this.state.singlePicture}/>
       </div>
     );
   }
