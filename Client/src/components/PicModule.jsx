@@ -22,7 +22,7 @@ class PicModule extends React.Component {
     return (
       <div>
         <h4>!!Hello from PicModule.jsx!!</h4>
-        <HorizontalScroll pictures={this.state.pictures} />
+        <HorizontalScroll picture={this.state.pictures} />
       </div>
     );
   }
