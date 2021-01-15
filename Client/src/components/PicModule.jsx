@@ -1,22 +1,30 @@
 import React from 'react';
 import axios from 'axios';
+import HorizontalScroll from './HorizontalScroll.jsx';
 
 class PicModule extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      pictures: []
-    }
+      pictures: [],
+    };
   }
 
-  componentDidMount(){
-    console.log('mounted');
+  componentDidMount() {
+    axios.get('/api/')
+      .then((data) => {
+        this.setState({ pictures: data.data });
+      })
+      .catch((err) => err);
   }
 
-  render(){
+  render() {
     return (
-      <h4>!!Hello from PicModule.jsx!!</h4>
-    )
+      <div>
+        <h4>!!Hello from PicModule.jsx!!</h4>
+        <HorizontalScroll pictures={this.state.pictures} />
+      </div>
+    );
   }
 }
 

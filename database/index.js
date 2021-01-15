@@ -4,6 +4,7 @@ const db = mongoose.createConnection('mongodb://localhost/understock', { useNewU
 
 const itemSchema = new mongoose.Schema({
   product_id: Number,
+  description: String,
   viewOne_url: String,
   viewTwo_url: String,
   viewThree_url: String,
