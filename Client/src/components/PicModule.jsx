@@ -12,8 +12,10 @@ class PicModule extends React.Component {
       largePics: [],
       thumbnails: [],
       fullView: false,
+      currentIndex: 0,
     };
     this.fullView = this.fullView.bind(this);
+    this.idxSync = this.idxSync.bind(this);
   }
 
   componentDidMount() {
@@ -35,11 +37,15 @@ class PicModule extends React.Component {
     }
   }
 
+  idxSync(index) {
+    this.setState({ currentIndex: index });
+  }
+
   render() {
     return (
       <div id="flex-container">
-        <VerticalScroll thumbnails={this.state.thumbnails} />
-        <HorizontalScroll largePics={this.state.largePics} fullView={this.fullView} />
+        <VerticalScroll thumbnails={this.state.thumbnails} focus={this.state.currentIndex} />
+        <HorizontalScroll largePics={this.state.largePics} fullView={this.fullView} idxSync={this.idxSync} />
       </div>
     );
   }

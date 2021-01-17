@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const VerticalScroll = (props) => {
-  const [img, setImg] = useState(0);
   const picArr = props.thumbnails;
+  const focus = props.focus;
 
-  const listItems = picArr.map((thumbnail) => {
+  const listItems = picArr.map((thumbnail, idx) => {
     return (
-      <button type="button" key={thumbnail}>
+      <button type="button" key={thumbnail} style={focus === idx ? { border: '1px solid blue' }: null}>
         <img src={thumbnail} key={thumbnail} alt="tiny" />
       </button>
     )

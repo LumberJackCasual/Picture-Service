@@ -7,15 +7,19 @@ const HorizontalScroll = (props) => {
   const onClickRightHandler = () => {
     if (img >= arr.length-1) {
       setImg(0);
+      props.idxSync(img);
     } else {
       setImg(img + 1);
+      props.idxSync(img);
     }
   };
   const onClickLeftHandler = () => {
     if (img === 0) {
       setImg(arr.length-1);
+      props.idxSync(img);
     } else {
       setImg(img - 1);
+      props.idxSync(img);
     }
   };
   const activateFullView = () => {
