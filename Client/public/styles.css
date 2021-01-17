@@ -1,0 +1,47 @@
+
+
+#app {
+  margin-left: 150px;
+}
+
+.picture-module-horizontal-scroll {
+  position: relative;
+  width: 498px;
+  height:498px;
+}
+.picture-module-horizontal-scroll img {
+  width: 100%;
+  height: auto;
+}
+
+.picture-module-horizontal-scroll .horizontal-scroll-rightClick{
+  position: absolute;
+  top: 50%;
+  right: .05%;
+  background-color: #fff;
+  border-radius: 4px 0 0 4px;
+  border: 1px solid #e7e8ea;
+  box-shadow: 0 2px 0 rgba(0,0,0,.0613961);
+  opacity: .7;
+  padding: 0 0 0 2px;
+  cursor: pointer;
+  height: 76px;
+  width: 40px;
+  outline: 0;
+}
+
+.picture-module-horizontal-scroll .horizontal-scroll-leftClick{
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  background-color: #fff;
+  border-radius: 0 4px 4px 0;
+  border: 1px solid #e7e8ea;
+  box-shadow: 0 2px 0 rgba(0,0,0,.0613961);
+  opacity: .7;
+  padding: 0 2px 0 0;
+  cursor: pointer;
+  height: 76px;
+  width: 40px;
+  outline: 0;
+}

@@ -15,7 +15,9 @@ app.use('/', (req, res, next) => {
 });
 
 app.get('/api/', (req, res) => {
-  mongo.Item.find((err, docs) => {
+  const getRandomInt = (max) => Math.floor(Math.random() * Math.floor(max));
+  const id = getRandomInt(99);
+  mongo.Item.find({ product_id: id }, (err, docs) => {
     if (err) {
       res.send(err);
     }
