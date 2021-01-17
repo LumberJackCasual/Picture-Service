@@ -23,7 +23,7 @@ const HorizontalScroll = (props) => {
     }
   };
   const activateFullView = () => {
-    props.fullView(true);
+    props.modalView(true);
   };
 
   return (

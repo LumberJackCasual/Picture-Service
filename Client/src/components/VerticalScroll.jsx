@@ -6,7 +6,7 @@ const VerticalScroll = (props) => {
 
   const listItems = picArr.map((thumbnail, idx) => {
     return (
-      <button type="button" key={thumbnail} style={focus === idx ? { border: '1px solid blue' }: null}>
+      <button type="button" key={thumbnail + idx} style={focus === idx ? { border: '1px solid blue' }: null}>
         <img src={thumbnail} key={thumbnail} alt="tiny" />
       </button>
     )

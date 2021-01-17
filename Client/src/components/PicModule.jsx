@@ -11,10 +11,10 @@ class PicModule extends React.Component {
       description: '',
       largePics: [],
       thumbnails: [],
-      fullView: false,
+      modalView: false,
       currentIndex: 0,
     };
-    this.fullView = this.fullView.bind(this);
+    this.modalView = this.modalView.bind(this);
     this.idxSync = this.idxSync.bind(this);
   }
 
@@ -29,11 +29,18 @@ class PicModule extends React.Component {
       .catch((err) => err);
   }
 
-  fullView(boolean) {
-    if (boolean === false) {
-      this.setState({fullView: true});
+  modalView() {
+    const defaultStyle = document.getElementById('defaultStyle');
+    const modalStyle = document.getElementById('modalStyle');
+
+    if (this.state.modalView === false) {
+      this.setState({modalView: true});
+      modalStyle.href = 'modal.css';
+      defaultStyle.href = '';
     } else {
-      this.setState({fullView: false});
+      this.setState({modalView: false});
+      modalStyle.href = '';
+      defaultStyle.href = 'styles.css';
     }
   }
 
@@ -43,9 +50,19 @@ class PicModule extends React.Component {
 
   render() {
     return (
-      <div id="flex-container">
-        <VerticalScroll thumbnails={this.state.thumbnails} focus={this.state.currentIndex} />
-        <HorizontalScroll largePics={this.state.largePics} fullView={this.fullView} idxSync={this.idxSync} />
+      <div>
+        { this.state.modalView === false &&
+        <div id="flex-container">
+          <VerticalScroll thumbnails={this.state.thumbnails} focus={this.state.currentIndex} />
+          <HorizontalScroll largePics={this.state.largePics} modalView={this.modalView} idxSync={this.idxSync} />
+        </div>
+        }
+        {this.state.modalView === true &&
+        <div>
+            <h3>Hi from Modal!</h3>
+            <button id="closeModalButton" type="button" onClick={this.modalView}>close</button>
+          </div>
+        }
       </div>
     );
   }
