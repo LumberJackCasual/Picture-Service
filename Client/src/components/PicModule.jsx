@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import HorizontalScroll from './HorizontalScroll.jsx';
+import VerticalScroll from './VerticalScroll.jsx';
 
 class PicModule extends React.Component {
   constructor(props) {
@@ -36,7 +37,8 @@ class PicModule extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id="flex-container">
+        <VerticalScroll thumbnails={this.state.thumbnails} />
         <HorizontalScroll largePics={this.state.largePics} fullView={this.fullView} />
       </div>
     );
