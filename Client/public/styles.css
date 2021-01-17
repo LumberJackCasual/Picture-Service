@@ -16,7 +16,7 @@
 
 .picture-module-horizontal-scroll .horizontal-scroll-rightClick{
   position: absolute;
-  top: 50%;
+  top: 45%;
   right: .05%;
   background-color: #fff;
   border-radius: 4px 0 0 4px;
@@ -32,7 +32,7 @@
 
 .picture-module-horizontal-scroll .horizontal-scroll-leftClick{
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 0%;
   background-color: #fff;
   border-radius: 0 4px 4px 0;

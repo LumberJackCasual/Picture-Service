@@ -9,8 +9,10 @@ class PicModule extends React.Component {
       product_id: 0,
       description: '',
       largePics: [],
-      thumbnails: []
+      thumbnails: [],
+      fullView: false,
     };
+    this.fullView = this.fullView.bind(this);
   }
 
   componentDidMount() {
@@ -24,10 +26,18 @@ class PicModule extends React.Component {
       .catch((err) => err);
   }
 
+  fullView(boolean) {
+    if (boolean === false) {
+      this.setState({fullView: true});
+    } else {
+      this.setState({fullView: false});
+    }
+  }
+
   render() {
     return (
       <div>
-        <HorizontalScroll largePics={this.state.largePics} />
+        <HorizontalScroll largePics={this.state.largePics} fullView={this.fullView} />
       </div>
     );
   }

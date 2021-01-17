@@ -18,10 +18,13 @@ const HorizontalScroll = (props) => {
       setImg(img - 1);
     }
   };
+  const activateFullView = () => {
+    props.fullView(true);
+  };
 
   return (
     <div className="picture-module-horizontal-scroll">
-      <img src={arr[img]} alt="pretty stuff" />
+      <img src={arr[img]} alt="pretty stuff" onClick={activateFullView} role="presentation" />
       <button className="horizontal-scroll-rightClick" onClick={onClickRightHandler} type="button">
         <svg color="#2F3337" width="24" height="24" viewBox="0 0 24 24" stroke="#2F3337" fill="#2F3337">
           <title>Chevron Right</title>
