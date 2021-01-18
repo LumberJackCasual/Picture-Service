@@ -42,7 +42,7 @@ class PicModule extends React.Component {
     const closeBTN = document.createElement('button');
     closeBTN.className = 'closeBTN';
     closeBTN.addEventListener('click', this.modalView);
-    const svg = document.createElement('svg');
+    closeBTN.innerText = 'X';
 
     if (this.state.modalView === false) {
       this.setState({ modalView: true });
