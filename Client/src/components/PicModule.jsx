@@ -7,7 +7,6 @@ class PicModule extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      product_id: 0,
       description: '',
       largePics: [],
       thumbnails: [],
@@ -21,30 +20,35 @@ class PicModule extends React.Component {
   componentDidMount() {
     axios.get('/api/')
       .then((data) => {
-        this.setState({ product_id: data.data[0]["product_id"]});
-        this.setState({ description: data.data[0]["description"] });
-        this.setState({ largePics: data.data[0]["largePics"] });
-        this.setState({ thumbnails: data.data[0]["thumbnails"] });
+        this.setState({ description: data.data[0].description });
+        this.setState({ largePics: data.data[0].largePics });
+        this.setState({ thumbnails: data.data[0].thumbnails });
       })
       .catch((err) => err);
   }
 
   modalView() {
+    const {
+      largePics,
+      currentIndex,
+      description,
+      modalView,
+    } = this.state;
     const defaultStyle = document.getElementById('defaultStyle');
     const modalStyle = document.getElementById('modalStyle');
     const header = document.createElement('div');
     header.id = 'modalHeader';
     const headerCountBTN = document.createElement('button');
     headerCountBTN.className = 'headerCountBTN';
-    headerCountBTN.innerText = `${this.state.currentIndex}/ ${this.state.largePics.length}`;
+    headerCountBTN.innerText = `${currentIndex}/ ${largePics.length}`;
     const text = document.createElement('h3');
-    text.innerText = `${this.state.description}`;
+    text.innerText = `${description}`;
     const closeBTN = document.createElement('button');
     closeBTN.className = 'closeBTN';
     closeBTN.addEventListener('click', this.modalView);
     closeBTN.innerText = 'X';
 
-    if (this.state.modalView === false) {
+    if (modalView === false) {
       this.setState({ modalView: true });
       modalStyle.href = 'modal.css';
       defaultStyle.href = '';
@@ -65,22 +69,42 @@ class PicModule extends React.Component {
   }
 
   render() {
+    const {
+      largePics,
+      thumbnails,
+      currentIndex,
+      modalView,
+    } = this.state;
     return (
       <div>
-        { this.state.modalView === false &&
+        { modalView === false && (
         <div id="flex-container">
-          <VerticalScroll thumbnails={this.state.thumbnails} focus={this.state.currentIndex} />
-          <HorizontalScroll largePics={this.state.largePics} modalView={this.modalView} idxSync={this.idxSync} />
+          <VerticalScroll
+            thumbnails={thumbnails}
+            focus={currentIndex}
+          />
+          <HorizontalScroll
+            largePics={largePics}
+            modalView={this.modalView}
+            idxSync={this.idxSync}
+          />
         </div>
-        }
-        {this.state.modalView === true &&
+        )}
+        {modalView === true && (
         <div>
           <div id="flex-container">
-              <HorizontalScroll largePics={this.state.largePics} modalView={this.modalView} idxSync={this.idxSync} />
-              <VerticalScroll thumbnails={this.state.thumbnails} focus={this.state.currentIndex} />
-           </div>
+            <HorizontalScroll
+              largePics={largePics}
+              modalView={this.modalView}
+              idxSync={this.idxSync}
+            />
+            <VerticalScroll
+              thumbnails={thumbnails}
+              focus={currentIndex}
+            />
+          </div>
         </div>
-        }
+        )}
       </div>
     );
   }
