@@ -1,16 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const VerticalScroll = (props) => {
-  const picArr = props.thumbnails;
-  const focus = props.focus;
+const VerticalScroll = ({ thumbnails, focus }) => {
+  const picArr = thumbnails;
+  const currentFocus = focus;
 
-  const listItems = picArr.map((thumbnail, idx) => {
-    return (
-      <button type="button" key={thumbnail + idx} style={focus === idx ? { border: '1px solid blue' }: null}>
-        <img src={thumbnail} key={thumbnail} alt="tiny" />
-      </button>
-    )
-  });
+  const listItems = picArr.map((thumbnail, idx) => (
+    <button type="button" data-value={idx} key={Math.round(Math.random() * 1000)} style={currentFocus === idx ? { border: '1px solid blue' } : null}>
+      <img src={thumbnail} key={thumbnail} alt="tiny" />
+    </button>
+  ));
   return (
     <div className="picture-module-vertical-scroll">
       <button className="vertical-scroll-topClick" type="button">
@@ -30,6 +29,11 @@ const VerticalScroll = (props) => {
       </button>
     </div>
   );
+};
+
+VerticalScroll.propTypes = {
+  thumbnails: PropTypes.arrayOf(PropTypes.string).isRequired,
+  focus: PropTypes.number.isRequired,
 };
 
 export default VerticalScroll;

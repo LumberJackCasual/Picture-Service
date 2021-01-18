@@ -46,7 +46,7 @@ const HorizontalScroll = ({ largePics, modalView, idxSync }) => {
   );
 };
 HorizontalScroll.propTypes = {
-  largePics: PropTypes.arrayOf(PropTypes.number).isRequired,
+  largePics: PropTypes.arrayOf(PropTypes.string).isRequired,
   idxSync: PropTypes.func.isRequired,
   modalView: PropTypes.func.isRequired,
 };
