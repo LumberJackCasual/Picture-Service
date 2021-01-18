@@ -1,29 +1,30 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
-const HorizontalScroll = (props) => {
+const HorizontalScroll = ({ largePics, modalView, idxSync }) => {
   const [img, setImg] = useState(0);
-  const arr = props.largePics;
+  const arr = largePics;
 
   const onClickRightHandler = () => {
-    if (img >= arr.length-1) {
+    if (img >= arr.length - 1) {
       setImg(0);
-      props.idxSync(img);
+      idxSync(img);
     } else {
       setImg(img + 1);
-      props.idxSync(img);
+      idxSync(img);
     }
   };
   const onClickLeftHandler = () => {
     if (img === 0) {
-      setImg(arr.length-1);
-      props.idxSync(img);
+      setImg(arr.length - 1);
+      idxSync(img);
     } else {
       setImg(img - 1);
-      props.idxSync(img);
+      idxSync(img);
     }
   };
   const activateFullView = () => {
-    props.modalView(true);
+    modalView(true);
   };
 
   return (
@@ -43,6 +44,11 @@ const HorizontalScroll = (props) => {
       </button>
     </div>
   );
+};
+HorizontalScroll.propTypes = {
+  largePics: PropTypes.arrayOf(PropTypes.number).isRequired,
+  idxSync: PropTypes.func.isRequired,
+  modalView: PropTypes.func.isRequired,
 };
 
 export default HorizontalScroll;
