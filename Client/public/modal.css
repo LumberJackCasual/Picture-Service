@@ -1,3 +1,144 @@
 body {
-  background-color: blueviolet;
+  align-items: center;
+  display:block;
+}
+
+#app {
+  height: 80%;
+  width: 100%;
+  margin-left: 30%;
+}
+#modalHeader {
+  top: 0px;
+  text-align: center;
+  align-items: center;
+  background-color: #f9fafb;
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 16px;
+  width: 100%;
+}
+#modalHeader h3 {
+  color: #2f3337;
+  font-size: 16px;
+  line-height: 18px;
+  margin: 5px 5px 5px 5px;
+  overflow: hidden;
+  padding: 16px;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 75%;
+}
+.closeBTN {
+  box-sizing: border-box;
+  background-color: transparent;
+  float: right;
+  border: 2px solid black;
+  height: 36px;
+  margin: 0 8px 0 0;
+  padding: 0;
+  width: 36px;
+  cursor: pointer;
+}
+
+.headerCountBTN {
+  box-sizing: border-box;
+  background-color: #2f3337;
+  border-radius: 3px;
+  color: #fff;
+  line-height: 16px;
+  opacity: .7;
+  padding: 2px 4px;
+  float: left;
+}
+
+#flex-container {
+  display:block;
+}
+.picture-module-vertical-scroll {
+  width: 500px;
+  height: 75px;
+  margin-top: 20px;
+  display: inline-flex;
+
+}
+.picture-module-vertical-scroll-img {
+  width: 434px;
+  height: 75px;
+  flex-direction: row;
+  overflow: hidden;
+}
+.picture-module-vertical-scroll-img img {
+  height: 70px;
+  width: 70px;
+}
+.picture-module-vertical-scroll-img button {
+  height: 72px;
+  width: 72px;
+  border: 1px solid #dadcdf;
+  margin: 0 2px 0;
+  padding: 0
+}
+
+.vertical-scroll-topClick {
+  height: 32px;
+  width:70px;
+  border: none;
+  background-color: white;
+  outline: 0;
+}
+.picture-module-vertical-scroll-img button:active, .picture-module-vertical-scroll-img button:focus {
+  border: 1px solid blue;
+}
+.vertical-scroll-bottomClick {
+  height: 32px;
+  width:70px;
+  border: none;
+  background-color: white;
+  outline: 0;
+}
+
+.picture-module-horizontal-scroll {
+  position: relative;
+  width: 600px;
+  height:600px;
+}
+.picture-module-horizontal-scroll img {
+  width: 100%;
+  height: auto;
+}
+
+.picture-module-horizontal-scroll .horizontal-scroll-rightClick{
+  position: absolute;
+  top: 45%;
+  left: 800px;
+  float:right;
+  background-color: #fff;
+  border-radius: 4px 0 0 4px;
+  border: 1px solid #e7e8ea;
+  box-shadow: 0 2px 0 rgba(0,0,0,.0613961);
+  opacity: .7;
+  padding: 0 0 0 2px;
+  cursor: pointer;
+  height: 76px;
+  width: 40px;
+  outline: 0;
+}
+
+.picture-module-horizontal-scroll .horizontal-scroll-leftClick{
+  position: absolute;
+  top: 45%;
+  right: 800px;
+  float: left;
+  background-color: #fff;
+  border-radius: 0 4px 4px 0;
+  border: 1px solid #e7e8ea;
+  box-shadow: 0 2px 0 rgba(0,0,0,.0613961);
+  opacity: .7;
+  padding: 0 2px 0 0;
+  cursor: pointer;
+  height: 76px;
+  width: 40px;
+  outline: 0;
 }
