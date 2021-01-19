@@ -28,39 +28,17 @@ class PicModule extends React.Component {
   }
 
   modalView() {
-    const {
-      largePics,
-      currentIndex,
-      description,
-      modalView,
-    } = this.state;
     const defaultStyle = document.getElementById('defaultStyle');
     const modalStyle = document.getElementById('modalStyle');
-    const header = document.createElement('div');
-    header.id = 'modalHeader';
-    const headerCountBTN = document.createElement('button');
-    headerCountBTN.className = 'headerCountBTN';
-    headerCountBTN.innerText = `${currentIndex}/ ${largePics.length}`;
-    const text = document.createElement('h3');
-    text.innerText = `${description}`;
-    const closeBTN = document.createElement('button');
-    closeBTN.className = 'closeBTN';
-    closeBTN.addEventListener('click', this.modalView);
-    closeBTN.innerText = 'X';
 
     if (modalView === false) {
       this.setState({ modalView: true });
       modalStyle.href = 'modal.css';
       defaultStyle.href = '';
-      header.appendChild(headerCountBTN);
-      header.appendChild(text);
-      header.appendChild(closeBTN);
-      document.body.prepend(header);
     } else {
       this.setState({ modalView: false });
       modalStyle.href = '';
       defaultStyle.href = 'styles.css';
-      document.body.removeChild(document.body.childNodes[0]);
     }
   }
 
@@ -73,6 +51,7 @@ class PicModule extends React.Component {
       largePics,
       thumbnails,
       currentIndex,
+      description,
       modalView,
     } = this.state;
     return (
@@ -92,6 +71,11 @@ class PicModule extends React.Component {
         )}
         {modalView === true && (
         <div>
+          <div id="modalHeader" >
+            <button className="headerCountBTN">{currentIndex} / {largePics.length}</button>
+            <h3>{description}</h3>
+            <button className="closeBTN" onClick={this.modalView} >X</button>
+          </div>
           <div id="flex-container">
             <HorizontalScroll
               largePics={largePics}
