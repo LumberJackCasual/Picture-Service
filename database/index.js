@@ -4,15 +4,9 @@ const db = mongoose.createConnection('mongodb://localhost/understock', { useNewU
 
 const itemSchema = new mongoose.Schema({
   product_id: Number,
-  viewOne_url: String,
-  viewTwo_url: String,
-  viewThree_url: String,
-  viewFour_url: String,
-  viewFive_url: String,
-  viewSix_url: String,
-  viewSeven_url: String,
-  viewEight_url: String,
-  viewNine_url: String,
+  description: String,
+  largePics: Array,
+  thumbnails: Array,
 });
 const Item = db.model('Item', itemSchema);
 

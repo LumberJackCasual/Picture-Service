@@ -1,3 +1,4 @@
+const faker = require('faker');
 const mongo = require('./index.js');
 
 const itemsArr = [];
@@ -7,16 +8,9 @@ const arrayBuilder = () => {
   while (i < 100) {
     itemsArr.push({
       product_id: i,
-      viewOne_url: 'http://placeimg.com/640/480/arch',
-      viewTwo_url: 'http://placeimg.com/640/480/arch',
-      viewThree_url: 'http://placeimg.com/640/480/arch',
-      viewFour_url: 'http://placeimg.com/640/480/arch',
-      viewFive_url: 'http://placeimg.com/640/480/arch',
-      viewSix_url: 'http://placeimg.com/640/480/arch',
-      viewSeven_url: 'http://placeimg.com/640/480/arch',
-      viewEight_url: 'http://placeimg.com/640/480/arch',
-      viewNine_url: 'http://placeimg.com/640/480/arch',
-
+      description: faker.commerce.productName(),
+      largePics: [`http://placeimg.com/498/498/arch?random=${Math.round(Math.random() * 1000)}`, `http://placeimg.com/498/498/arch?random=${Math.round(Math.random() * 1000)}`, `http://placeimg.com/498/498/arch?random=${Math.round(Math.random() * 1000)}`, `http://placeimg.com/498/498/arch?random=${Math.round(Math.random() * 1000)}`, `http://placeimg.com/498/498/arch?random=${Math.round(Math.random() * 1000)}`, `http://placeimg.com/498/498/arch?random=${Math.round(Math.random() * 1000)}`, `http://placeimg.com/498/498/arch?random=${Math.round(Math.random() * 1000)}`, `http://placeimg.com/498/498/arch?random=${Math.round(Math.random() * 1000)}`, `http://placeimg.com/498/498/arch?random=${Math.round(Math.random() * 1000)}`],
+      thumbnails: [`http://placeimg.com/70/70/arch?random=${Math.round(Math.random() * 1000)}`, `http://placeimg.com/70/70/arch?random=${Math.round(Math.random() * 1000)}`, `http://placeimg.com/70/70/arch?random=${Math.round(Math.random() * 1000)}`, `http://placeimg.com/70/70/arch?random=${Math.round(Math.random() * 1000)}`, `http://placeimg.com/70/70/arch?random=${Math.round(Math.random() * 1000)}`, `http://placeimg.com/70/70/arch?random=${Math.round(Math.random() * 1000)}`, `http://placeimg.com/70/70/arch?random=${Math.round(Math.random() * 1000)}`, `http://placeimg.com/70/70/arch?random=${Math.round(Math.random() * 1000)}`, `http://placeimg.com/70/70/arch?random=${Math.round(Math.random() * 1000)}`],
     });
     i += 1;
   }
