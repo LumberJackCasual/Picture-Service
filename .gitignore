@@ -1,3 +1,4 @@
 node_modules
 /Client/public/picture_app.js
 process.env
+coverage
