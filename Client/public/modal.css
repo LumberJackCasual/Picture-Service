@@ -14,6 +14,7 @@ body {
   background-image: url('white_background.png');
   box-sizing: border-box;
 }
+
 #modalHeader {
   top: 0px;
   text-align: center;
@@ -75,7 +76,7 @@ body {
 
 }
 .picture-module-vertical-scroll-img {
-  width: 434px;
+  width: 600px;
   height: 75px;
   flex-direction: row;
   overflow: hidden;
@@ -93,21 +94,25 @@ body {
 }
 
 .vertical-scroll-topClick {
-  height: 70px;
-  width:32px;
+  height: 32px;
+  width:70px;
+  margin-top: 15px;
   border: none;
   background-color: white;
   outline: 0;
+  transform: rotate(-90deg);
 }
 .picture-module-vertical-scroll-img button:active, .picture-module-vertical-scroll-img button:focus {
   border: 1px solid blue;
 }
 .vertical-scroll-bottomClick {
-  height: 70px;
-  width:32px;
+  height: 32px;
+  width:70px;
+  margin-top: 15px;
   border: none;
   background-color: white;
   outline: 0;
+  transform: rotate(-90deg);
 }
 
 .picture-module-horizontal-scroll {
