@@ -30,6 +30,7 @@ class PicModule extends React.Component {
   modalView() {
     const defaultStyle = document.getElementById('defaultStyle');
     const modalStyle = document.getElementById('modalStyle');
+    const { modalView } = this.state;
 
     if (modalView === false) {
       this.setState({ modalView: true });
@@ -61,18 +62,20 @@ class PicModule extends React.Component {
           <VerticalScroll
             thumbnails={thumbnails}
             focus={currentIndex}
+            idxSync={this.idxSync}
           />
           <HorizontalScroll
             largePics={largePics}
             modalView={this.modalView}
             idxSync={this.idxSync}
+            currentIndex= {currentIndex}
           />
         </div>
         )}
         {modalView === true && (
         <div>
           <div id="modalHeader" >
-            <button className="headerCountBTN">{currentIndex} / {largePics.length}</button>
+            <button className="headerCountBTN">{currentIndex} / {largePics.length - 1}</button>
             <h3>{description}</h3>
             <button className="closeBTN" onClick={this.modalView} >X</button>
           </div>
@@ -81,10 +84,12 @@ class PicModule extends React.Component {
               largePics={largePics}
               modalView={this.modalView}
               idxSync={this.idxSync}
+              currentIndex= {currentIndex}
             />
             <VerticalScroll
               thumbnails={thumbnails}
               focus={currentIndex}
+              idxSync={this.idxSync}
             />
           </div>
         </div>

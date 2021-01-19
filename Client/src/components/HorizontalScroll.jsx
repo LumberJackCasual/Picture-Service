@@ -1,35 +1,31 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-const HorizontalScroll = ({ largePics, modalView, idxSync }) => {
-  const [img, setImg] = useState(0);
+const HorizontalScroll = ({ largePics, modalView, idxSync, currentIndex }) => {
+  const index = currentIndex;
   const arr = largePics;
 
   const onClickRightHandler = () => {
-    if (img >= arr.length - 1) {
-      setImg(0);
-      idxSync(img);
+    if (index >= arr.length - 1) {
+      idxSync(0);
     } else {
-      setImg(img + 1);
-      idxSync(img);
+      idxSync(index + 1);
     }
   };
   const onClickLeftHandler = () => {
-    if (img === 0) {
-      setImg(arr.length - 1);
-      idxSync(img);
+    if (index === 0) {
+      idxSync(arr.length - 1);
     } else {
-      setImg(img - 1);
-      idxSync(img);
+      idxSync(index - 1);
     }
   };
   const activateFullView = () => {
-    modalView(true);
+    modalView();
   };
 
   return (
     <div className="picture-module-horizontal-scroll">
-      <img src={arr[img]} alt="pretty stuff" onClick={activateFullView} role="presentation" />
+      <img src={arr[index]} alt="pretty stuff" onClick={activateFullView} role="presentation" />
       <button className="horizontal-scroll-rightClick" onClick={onClickRightHandler} type="button">
         <svg color="#2F3337" width="24" height="24" viewBox="0 0 24 24" stroke="#2F3337" fill="#2F3337">
           <title>Chevron Right</title>
@@ -49,6 +45,7 @@ HorizontalScroll.propTypes = {
   largePics: PropTypes.arrayOf(PropTypes.string).isRequired,
   idxSync: PropTypes.func.isRequired,
   modalView: PropTypes.func.isRequired,
+  currentIndex: PropTypes.number.isRequired
 };
 
 export default HorizontalScroll;

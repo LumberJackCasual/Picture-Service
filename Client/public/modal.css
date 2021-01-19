@@ -61,14 +61,17 @@ body {
 }
 
 #flex-container {
-  margin-left: 30%;
-  display:block;
+  /* margin-left: 30%; */
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
 }
 .picture-module-vertical-scroll {
   width: 500px;
   height: 75px;
   margin-top: 20px;
   display: inline-flex;
+  margin-left:30%;
 
 }
 .picture-module-vertical-scroll-img {
@@ -111,6 +114,8 @@ body {
   position: relative;
   width: 600px;
   height:600px;
+  margin-left:30%;
+  margin-right: 30%;
 }
 .picture-module-horizontal-scroll img {
   width: 100%;
@@ -120,7 +125,7 @@ body {
 .picture-module-horizontal-scroll .horizontal-scroll-rightClick{
   position: absolute;
   top: 45%;
-  left: 800px;
+  right: 0px;
   float:right;
   background-color: #fff;
   border-radius: 4px 0 0 4px;
@@ -137,7 +142,7 @@ body {
 .picture-module-horizontal-scroll .horizontal-scroll-leftClick{
   position: absolute;
   top: 45%;
-  right: 800px;
+  left: 0px;
   float: left;
   background-color: #fff;
   border-radius: 0 4px 4px 0;
