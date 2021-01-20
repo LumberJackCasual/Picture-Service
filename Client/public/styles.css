@@ -8,7 +8,7 @@
 #flex-container {
   display:flex;
 }
-.picture-module-vertical-scroll {
+#picture-module-vertical-scroll {
   width: 75px;
   margin-right: 20px;
   flex-direction: column;
@@ -48,17 +48,17 @@
   outline: 0;
 }
 
-.picture-module-horizontal-scroll {
+#picture-module-horizontal-scroll {
   position: relative;
   width: 498px;
   height:498px;
 }
-.picture-module-horizontal-scroll img {
+#picture-module-horizontal-scroll img {
   width: 100%;
   height: auto;
 }
 
-.picture-module-horizontal-scroll .horizontal-scroll-rightClick{
+#picture-module-horizontal-scroll .horizontal-scroll-rightClick{
   position: absolute;
   top: 45%;
   right: .05%;
@@ -74,7 +74,7 @@
   outline: 0;
 }
 
-.picture-module-horizontal-scroll .horizontal-scroll-leftClick{
+#picture-module-horizontal-scroll .horizontal-scroll-leftClick{
   position: absolute;
   top: 45%;
   left: 0%;

@@ -6,8 +6,7 @@
   "scripts": {
     "start": "nodemon Server/index.js",
     "build": "webpack -w",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "jest": "jest --coverage",
+    "test": "jest --coverage",
     "seed": "node database/seed.js"
   },
   "repository": {
@@ -29,8 +28,6 @@
     "@testing-library/react": "^11.2.3",
     "babel-loader": "^8.2.2",
     "dotenv": "^8.2.0",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.5",
     "eslint": "^7.17.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-plugin-import": "^2.22.1",

@@ -43,7 +43,7 @@ const VerticalScroll = ({ thumbnails, focus, idxSync }) => {
   ));
   const displayItems = listItems.slice(sliceFactor);
   return (
-    <div className="picture-module-vertical-scroll">
+    <div id="picture-module-vertical-scroll">
       <button className="vertical-scroll-topClick" type="button" onClick={chevronUpClick}>
         <svg width="24" height="24" viewBox="0 0 24 24" stroke="#2F3337" fill="#2F3337">
           <title>Chevron Up</title>
