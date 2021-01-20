@@ -22,10 +22,30 @@ const HorizontalScroll = ({ largePics, modalView, idxSync, currentIndex }) => {
   const activateFullView = () => {
     modalView();
   };
+  const mouseEnter = () => {
+    const spotlight = document.getElementById('zoomLens');
+    spotlight.style.display = 'block';
+  }
+
+  const mouseMoveHandler = (event) => {
+    //console.dir(event.target);
+    //console.log(`${event.pageX} and ${event.pageY}`);
+    const spotlight = document.getElementById('zoomLens');
+    const mouseY = event.pageY;
+    const mouseX = event.pageX;
+    spotlight.style.top = mouseY - 190 + 'px';
+    spotlight.style.left = mouseX - 340 + 'px';
+
+  }
+ const mouseLeave = () => {
+    const spotlight = document.getElementById('zoomLens');
+    spotlight.style.display = 'none';
+  }
 
   return (
     <div id="picture-module-horizontal-scroll">
-      <img src={arr[index]} alt="pretty stuff" onClick={activateFullView} role="presentation" />
+      <img src={arr[index]} alt="pretty stuff" onClick={activateFullView} role="presentation" onMouseEnter={mouseEnter} onMouseMove={mouseMoveHandler} onMouseLeave = {mouseLeave} />
+      <div id="zoomLens" />
       <button className="horizontal-scroll-rightClick" onClick={onClickRightHandler} type="button">
         <svg color="#2F3337" width="24" height="24" viewBox="0 0 24 24" stroke="#2F3337" fill="#2F3337">
           <title>Chevron Right</title>
