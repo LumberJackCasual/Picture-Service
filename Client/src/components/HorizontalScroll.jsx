@@ -62,7 +62,7 @@ const HorizontalScroll = ({ largePics, modalView, idxSync, currentIndex, fullScr
   }
 
   return (
-    <div id="picture-module-horizontal-scroll" onMouseEnter={!fullScreen ?(event) => mouseEnter(event): null} onMouseMove= {!fullScreen ?mouseMoveHandler: null} onMouseLeave = {mouseLeave} >
+    <div id="picture-module-horizontal-scroll" onMouseEnter={!fullScreen ?(event) => mouseEnter(event): null} onMouseMove= {!fullScreen ?mouseMoveHandler: null} onMouseLeave = {mouseLeave}>
       <div >
       <img src={img} alt="pretty stuff"  role="presentation" />
       </div>

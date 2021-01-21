@@ -6,6 +6,7 @@ const VerticalScroll = ({ thumbnails, focus, idxSync }) => {
   const currentFocus = focus;
   const [sliceFactor, setSliceFactor] = useState(0,5);
 
+
   const clickHandler = (event) => {
     const id = Number.parseInt(event.target.dataset.num);
     idxSync(id);
