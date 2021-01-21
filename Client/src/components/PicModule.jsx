@@ -69,6 +69,7 @@ class PicModule extends React.Component {
             modalView={this.modalView}
             idxSync={this.idxSync}
             currentIndex= {currentIndex}
+            fullScreen={modalView}
           />
         </div>
         )}
@@ -85,6 +86,7 @@ class PicModule extends React.Component {
               modalView={this.modalView}
               idxSync={this.idxSync}
               currentIndex= {currentIndex}
+              fullScreen={modalView}
             />
             <VerticalScroll
               thumbnails={thumbnails}

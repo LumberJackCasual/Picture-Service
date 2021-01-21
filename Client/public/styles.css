@@ -58,6 +58,34 @@
   height: auto;
 }
 
+#zoomLens {
+  display: none;
+  height: 250px;
+  width: 250px;
+  position: absolute;
+  background-color: rgba(143, 140, 140, 0.4);
+  transition-timing-function: 100ms ease-out 0.25s;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+
+
+}
+
+#zoomPic {
+  display:none;
+  height: 498px;
+  width: 498px;
+  position: absolute;
+  z-index: 2;
+  top: 0px;
+  left: 550px;
+  border:5px solid black;
+  background-size: 900px 900px;
+  background-repeat:no-repeat;
+}
+
+
 #picture-module-horizontal-scroll .horizontal-scroll-rightClick{
   position: absolute;
   top: 45%;
