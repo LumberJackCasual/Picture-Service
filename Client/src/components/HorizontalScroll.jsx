@@ -33,14 +33,30 @@ const HorizontalScroll = ({ largePics, modalView, idxSync, currentIndex, fullScr
 
   const mouseMoveHandler = (event) => {
     const spotlight = document.getElementById('zoomLens');
-    spotlight.style.top = (event.pageY- 180) + 'px';
-    spotlight.style.left = (event.pageX - 360) + 'px';
-    // console.log (`Y/Top: ${event.pageY}, X/Left: ${event.pageX}`)
     const zoomPic = document.getElementById('zoomPic');
+
     zoomPic.style.backgroundImage = `url(${img})`;
-    const cx = zoomPic.offsetWidth / spotlight.offsetWidth;
-    const cy = zoomPic.offsetHeight / spotlight.offsetHeight;
-    zoomPic.style.backgroundSize = `${498 * cx}px ${498 * cy}px`;
+    let x = event.pageX;
+    let y = event.pageY;
+
+
+    let ytop = y - 180;
+    let xleft = x - 360;
+
+    if(ytop <= 0){ytop = 0}
+    if(ytop >=248){ytop = 248}
+    if(xleft <= 0){xleft = 0}
+    if(xleft >= 248){xleft = 248}
+
+    spotlight.style.top = (ytop) + 'px';
+    spotlight.style.left = (xleft) + 'px';
+
+
+    const { left, top, width, height} = event.target.getBoundingClientRect();
+    const xFactor = (x + left - 800) / width * 100;
+    const yFactor = (y + top - 450) / height * 100;
+
+    zoomPic.style.backgroundPosition= `${x-360}% ${y -200}%`;
 
   }
  const mouseLeave = () => {
