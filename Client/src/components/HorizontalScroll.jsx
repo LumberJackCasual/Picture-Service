@@ -51,11 +51,6 @@ const HorizontalScroll = ({ largePics, modalView, idxSync, currentIndex, fullScr
     spotlight.style.top = (ytop) + 'px';
     spotlight.style.left = (xleft) + 'px';
 
-
-    const { left, top, width, height} = event.target.getBoundingClientRect();
-    const xFactor = (x + left - 800) / width * 100;
-    const yFactor = (y + top - 450) / height * 100;
-
     zoomPic.style.backgroundPosition= `${x-360}% ${y -200}%`;
 
   }
