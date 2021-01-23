@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 import React from 'react';
 import axios from 'axios';
 import HorizontalScroll from './HorizontalScroll.jsx';
@@ -68,24 +69,24 @@ class PicModule extends React.Component {
             largePics={largePics}
             modalView={this.modalView}
             idxSync={this.idxSync}
-            currentIndex= {currentIndex}
+            currentIndex={currentIndex}
             fullScreen={modalView}
           />
         </div>
         )}
         {modalView === true && (
         <div>
-          <div id="modalHeader" >
-            <button className="headerCountBTN">{currentIndex + 1} / {largePics.length}</button>
+          <div id="modalHeader">
+            <button id="headerCountBTN" className="headerCountBTN" type="button">{`${currentIndex + 1} / ${largePics.length}`}</button>
             <h3>{description}</h3>
-            <button className="closeBTN" onClick={this.modalView} >X</button>
+            <button className="closeBTN" type="button" onClick={this.modalView}>X</button>
           </div>
           <div id="flex-container">
             <HorizontalScroll
               largePics={largePics}
               modalView={this.modalView}
               idxSync={this.idxSync}
-              currentIndex= {currentIndex}
+              currentIndex={currentIndex}
               fullScreen={modalView}
             />
             <VerticalScroll

@@ -19,6 +19,6 @@ module.exports = {
     'react',
   ],
   rules: {
-    "import/extensions": [<severity>, "ignorePackages"]
+
   },
 };
