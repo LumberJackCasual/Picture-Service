@@ -1,10 +1,9 @@
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable no-undef */
-/* eslint-disable import/extensions */
 import '@testing-library/jest-dom';
 import { render, fireEvent } from '@testing-library/react';
 import React from 'react';
-import HorizontalScroll from '../Client/src/components/HorizontalScroll.jsx';
+import HorizontalScroll from '../Client/src/components/HorizontalScroll';
 
 describe('Horizontal Scroll Component', () => {
   const largePics = ['http://placeimg.com/498/498/arch?random=627', 'http://placeimg.com/498/498/arch?random=378', 'http://placeimg.com/498/498/arch?random=204', 'http://placeimg.com/498/498/arch?random=4', 'http://placeimg.com/498/498/arch?random=514', 'http://placeimg.com/498/498/arch?random=892', 'http://placeimg.com/498/498/arch?random=555', 'http://placeimg.com/498/498/arch?random=396', 'http://placeimg.com/498/498/arch?random=223'];

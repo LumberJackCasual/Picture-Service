@@ -1,10 +1,9 @@
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable no-undef */
-/* eslint-disable import/extensions */
 import '@testing-library/jest-dom';
 import { render, fireEvent } from '@testing-library/react';
 import React from 'react';
-import VerticalScroll from '../Client/src/components/VerticalScroll.jsx';
+import VerticalScroll from '../Client/src/components/VerticalScroll';
 
 const thumbnails = ['http://placeimg.com/70/70/arch?random=568', 'http://placeimg.com/70/70/arch?random=250', 'http://placeimg.com/70/70/arch?random=918', 'http://placeimg.com/70/70/arch?random=775', 'http://placeimg.com/70/70/arch?random=303', 'http://placeimg.com/70/70/arch?random=434', 'http://placeimg.com/70/70/arch?random=826', 'http://placeimg.com/70/70/arch?random=876', 'http://placeimg.com/70/70/arch?random=789'];
 
