@@ -1,8 +1,7 @@
-/* eslint-disable import/extensions */
 import React from 'react';
 import axios from 'axios';
-import HorizontalScroll from './HorizontalScroll.jsx';
-import VerticalScroll from './VerticalScroll.jsx';
+import HorizontalScroll from './HorizontalScroll';
+import VerticalScroll from './VerticalScroll';
 
 class PicModule extends React.Component {
   constructor(props) {
