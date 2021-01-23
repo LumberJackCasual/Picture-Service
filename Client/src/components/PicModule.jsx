@@ -77,7 +77,7 @@ class PicModule extends React.Component {
         {modalView === true && (
         <div>
           <div id="modalHeader">
-            <button className="headerCountBTN" type="button">{`${currentIndex + 1} / ${largePics.length}`}</button>
+            <button id="headerCountBTN" className="headerCountBTN" type="button">{`${currentIndex + 1} / ${largePics.length}`}</button>
             <h3>{description}</h3>
             <button className="closeBTN" type="button" onClick={this.modalView}>X</button>
           </div>
