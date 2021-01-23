@@ -4,42 +4,39 @@ import PropTypes from 'prop-types';
 const VerticalScroll = ({ thumbnails, focus, idxSync }) => {
   const picArr = thumbnails;
   const currentFocus = focus;
-  const [sliceFactor, setSliceFactor] = useState(0,5);
-
+  const [sliceFactor, setSliceFactor] = useState(0, 5);
 
   const clickHandler = (event) => {
-    const id = Number.parseInt(event.target.dataset.num);
+    const id = Number.parseInt(event.target.dataset.num, 10);
     idxSync(id);
-  }
+  };
 
   const chevronDownClick = () => {
     if (currentFocus === picArr.length - 1) {
       idxSync(0);
-      setSliceFactor(0,5);
+      setSliceFactor(0, 5);
     } else if (currentFocus === 5) {
       idxSync(currentFocus + 1);
-      setSliceFactor( 5, picArr.length - 1 )
+      setSliceFactor(5, picArr.length - 1);
     } else {
       idxSync(currentFocus + 1);
-      }
-  }
+    }
+  };
 
   const chevronUpClick = () => {
     if (currentFocus === 0) {
       idxSync(picArr.length - 1);
-      setSliceFactor(5,picArr.length -1)
+      setSliceFactor(5, picArr.length - 1);
     } else if (currentFocus === 5) {
       idxSync(currentFocus - 1);
-      setSliceFactor(0,5);
+      setSliceFactor(0, 5);
     } else {
       idxSync(currentFocus - 1);
-
     }
-  }
-
+  };
 
   const listItems = picArr.map((thumbnail, idx) => (
-    <button type="button"  key={Math.round(Math.random() * 1000)} onClick={clickHandler} style={currentFocus === idx ? { border: '1px solid blue' } : null}>
+    <button type="button" key={Math.round(Math.random() * 1000)} onClick={clickHandler} style={currentFocus === idx ? { border: '1px solid blue' } : null}>
       <img src={thumbnail} key={thumbnail} alt="tiny" data-num={idx} />
     </button>
   ));
@@ -68,7 +65,7 @@ const VerticalScroll = ({ thumbnails, focus, idxSync }) => {
 VerticalScroll.propTypes = {
   thumbnails: PropTypes.arrayOf(PropTypes.string).isRequired,
   focus: PropTypes.number.isRequired,
-  idxSync: PropTypes.func.isRequired
+  idxSync: PropTypes.func.isRequired,
 };
 
 export default VerticalScroll;

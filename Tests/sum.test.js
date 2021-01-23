@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable import/extensions */
 import sum from './sum.js';
 
 test('adds 1 + 2 to equal 3', () => {
