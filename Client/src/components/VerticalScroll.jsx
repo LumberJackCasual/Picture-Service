@@ -28,11 +28,12 @@ const VerticalScroll = ({ thumbnails, focus, idxSync }) => {
     if (currentFocus === 0) {
       idxSync(picArr.length - 1);
       setSliceFactor(5,picArr.length -1)
+    } else if (currentFocus === 5) {
+      idxSync(currentFocus - 1);
+      setSliceFactor(0,5);
     } else {
       idxSync(currentFocus - 1);
-      if (currentFocus === 6) {
-        setSliceFactor(0,5);
-      }
+
     }
   }
 
