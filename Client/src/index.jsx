@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PicModule from './components/PicModule.jsx';
+import PicModule from './components/PicModule';
 
-ReactDOM.render(<PicModule />, document.getElementById('app'));
+ReactDOM.render(<PicModule productId={99} />, document.getElementById('app'));
