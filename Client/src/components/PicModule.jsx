@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 import HorizontalScroll from './HorizontalScroll';
 import VerticalScroll from './VerticalScroll';
 
@@ -18,7 +19,9 @@ class PicModule extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('/api/')
+    // console.log(this.props.productId);
+    const { productId } = this.props;
+    axios.get('/api/', { params: { id: productId } })
       .then((data) => {
         this.setState({ description: data.data[0].description });
         this.setState({ largePics: data.data[0].largePics });
@@ -100,5 +103,9 @@ class PicModule extends React.Component {
     );
   }
 }
+
+PicModule.propTypes = {
+  productId: PropTypes.number.isRequired,
+};
 
 export default PicModule;

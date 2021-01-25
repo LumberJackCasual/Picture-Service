@@ -15,8 +15,7 @@ app.use('/', (req, res, next) => {
 });
 
 app.get('/api/', (req, res) => {
-  const getRandomInt = (max) => Math.floor(Math.random() * Math.floor(max));
-  const id = getRandomInt(99);
+  const { id } = req.query;
   mongo.Item.find({ product_id: id }, (err, docs) => {
     if (err) {
       res.send(err);
@@ -26,6 +25,5 @@ app.get('/api/', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`server listening on port ${port}`);
+  console.log(`server listening for picture service on port ${port}`);
 });
-// all console.logs need to be stripped before pushing to production
