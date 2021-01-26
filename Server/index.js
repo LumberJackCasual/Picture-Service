@@ -10,12 +10,12 @@ app.use(bodyParser.json());
 app.use(express.static('./Client/public'));
 
 app.use('/', (req, res, next) => {
-  console.log(`Now Handling ${req.method} Request`);
+  console.log(`Now Handling ${req.method} Request from ${req.path}`);
   next();
 });
 
-app.get('/api/', (req, res) => {
-  const { id } = req.query;
+app.get('/api/picture-service/:id', (req, res) => {
+  const id = parseInt(req.path.split('/')[3], 10);
   mongo.Item.find({ product_id: id }, (err, docs) => {
     if (err) {
       res.send(err);

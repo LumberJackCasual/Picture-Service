@@ -40,8 +40,8 @@ const HorizontalScroll = ({
     const x = event.pageX;
     const y = event.pageY;
 
-    let ytop = y - 180;
-    let xleft = x - 360;
+    let ytop = y - 130;
+    let xleft = x - 210;
 
     if (ytop <= 0) { ytop = 0; }
     if (ytop >= 248) { ytop = 248; }
@@ -50,8 +50,7 @@ const HorizontalScroll = ({
 
     spotlight.style.top = `${ytop}px`;
     spotlight.style.left = `${xleft}px`;
-
-    zoomPic.style.backgroundPosition = `${x - 360}% ${y - 200}%`;
+    zoomPic.style.backgroundPosition = `${xleft}% ${ytop}%`;
   };
   const mouseLeave = () => {
     const spotlight = document.getElementById('zoomLens');
