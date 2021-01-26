@@ -19,9 +19,8 @@ class PicModule extends React.Component {
   }
 
   componentDidMount() {
-    // console.log(this.props.productId);
     const { productId } = this.props;
-    axios.get('/api/', { params: { id: productId } })
+    axios.get(`/api/picture-service/${productId}`)
       .then((data) => {
         this.setState({ description: data.data[0].description });
         this.setState({ largePics: data.data[0].largePics });
