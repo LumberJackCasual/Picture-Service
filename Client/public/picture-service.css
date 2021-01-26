@@ -1,10 +1,5 @@
-html, body {
-  margin:0;
-  height: 100%;
-  display:block;
-}
 
-#app {
+#pic-service-modal {
   height: 100%;
   width: 100%;
   margin: 0 auto;
@@ -58,21 +53,32 @@ html, body {
   padding: 2px 4px;
   float: left;
 }
-
 #flex-container {
+  display:flex;
+}
+#modal-flex-container {
   display:flex;
   justify-content: center;
   flex-direction: column;
 }
 #picture-module-vertical-scroll {
+  width: 75px;
+  margin-right: 20px;
+  flex-direction: column;
+}
+#modal-picture-module-vertical-scroll {
   width: 600px;
   height: 75px;
   padding-top: 20px;
   display: inline-flex;
   margin: 0 auto;
-
 }
+
 .picture-module-vertical-scroll-img {
+  height: 434px;
+  overflow: hidden;
+}
+.modal-picture-module-vertical-scroll-img {
   width: 600px;
   height: 75px;
   flex-direction: row;
@@ -82,7 +88,18 @@ html, body {
   height: 70px;
   width: 70px;
 }
+.modal-picture-module-vertical-scroll-img img {
+  height: 70px;
+  width: 70px;
+}
 .picture-module-vertical-scroll-img button {
+  height: 72px;
+  width: 72px;
+  border: 1px solid #dadcdf;
+  margin: 0 0 10px;
+  padding: 0
+}
+.modal-picture-module-vertical-scroll-img button {
   height: 72px;
   width: 72px;
   border: 1px solid #dadcdf;
@@ -91,6 +108,13 @@ html, body {
 }
 
 .vertical-scroll-topClick {
+  height: 32px;
+  width:70px;
+  border: none;
+  background-color: white;
+  outline: 0;
+}
+.modal-vertical-scroll-topClick {
   height: 32px;
   width:70px;
   margin-top: 15px;
@@ -102,7 +126,17 @@ html, body {
 .picture-module-vertical-scroll-img button:active, .picture-module-vertical-scroll-img button:focus {
   border: 1px solid blue;
 }
+.modal-picture-module-vertical-scroll-img button:active, .modal-picture-module-vertical-scroll-img button:focus {
+  border: 1px solid blue;
+}
 .vertical-scroll-bottomClick {
+  height: 32px;
+  width:70px;
+  border: none;
+  background-color: white;
+  outline: 0;
+}
+.modal-vertical-scroll-bottomClick {
   height: 32px;
   width:70px;
   margin-top: 15px;
@@ -114,6 +148,11 @@ html, body {
 
 #picture-module-horizontal-scroll {
   position: relative;
+  width: 498px;
+  height:498px;
+}
+#modal-picture-module-horizontal-scroll {
+  position: relative;
   width: 600px;
   height:600px;
   margin: 0 auto;
@@ -122,8 +161,55 @@ html, body {
   width: 100%;
   height: auto;
 }
+#modal-picture-module-horizontal-scroll img {
+  width: 100%;
+  height: auto;
+}
+
+#zoomLens {
+  display: none;
+  height: 250px;
+  width: 250px;
+  position: absolute;
+  background-color: rgba(143, 140, 140, 0.4);
+  transition-timing-function: 100ms ease-out 0.25s;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+
+
+}
+
+#zoomPic {
+  display:none;
+  height: 498px;
+  width: 498px;
+  position: absolute;
+  z-index: 2;
+  top: 0px;
+  left: 550px;
+  border:5px solid black;
+  background-size: 900px;
+  background-repeat:no-repeat;
+}
+
 
 #picture-module-horizontal-scroll .horizontal-scroll-rightClick{
+  position: absolute;
+  top: 45%;
+  right: .05%;
+  background-color: #fff;
+  border-radius: 4px 0 0 4px;
+  border: 1px solid #e7e8ea;
+  box-shadow: 0 2px 0 rgba(0,0,0,.0613961);
+  opacity: .7;
+  padding: 0 0 0 2px;
+  cursor: pointer;
+  height: 76px;
+  width: 40px;
+  outline: 0;
+}
+#modal-picture-module-horizontal-scroll .horizontal-scroll-rightClick{
   position: absolute;
   top: 45%;
   right: 0px;
@@ -141,6 +227,21 @@ html, body {
 }
 
 #picture-module-horizontal-scroll .horizontal-scroll-leftClick{
+  position: absolute;
+  top: 45%;
+  left: 0%;
+  background-color: #fff;
+  border-radius: 0 4px 4px 0;
+  border: 1px solid #e7e8ea;
+  box-shadow: 0 2px 0 rgba(0,0,0,.0613961);
+  opacity: .7;
+  padding: 0 2px 0 0;
+  cursor: pointer;
+  height: 76px;
+  width: 40px;
+  outline: 0;
+}
+#modal-picture-module-horizontal-scroll .horizontal-scroll-leftClick{
   position: absolute;
   top: 45%;
   left: 0px;
