@@ -30,18 +30,12 @@ class PicModule extends React.Component {
   }
 
   modalView() {
-    const defaultStyle = document.getElementById('defaultStyle');
-    const modalStyle = document.getElementById('modalStyle');
     const { modalView } = this.state;
 
     if (modalView === false) {
       this.setState({ modalView: true });
-      modalStyle.href = 'modal.css';
-      defaultStyle.href = '';
     } else {
       this.setState({ modalView: false });
-      modalStyle.href = '';
-      defaultStyle.href = 'styles.css';
     }
   }
 
@@ -65,6 +59,7 @@ class PicModule extends React.Component {
             thumbnails={thumbnails}
             focus={currentIndex}
             idxSync={this.idxSync}
+            modalView={modalView}
           />
           <HorizontalScroll
             largePics={largePics}
@@ -76,13 +71,13 @@ class PicModule extends React.Component {
         </div>
         )}
         {modalView === true && (
-        <div>
+        <div id="pic-service-modal">
           <div id="modalHeader">
             <button id="headerCountBTN" className="headerCountBTN" type="button">{`${currentIndex + 1} / ${largePics.length}`}</button>
             <h3>{description}</h3>
             <button className="closeBTN" type="button" onClick={this.modalView}>X</button>
           </div>
-          <div id="flex-container">
+          <div id="modal-flex-container">
             <HorizontalScroll
               largePics={largePics}
               modalView={this.modalView}
@@ -94,6 +89,7 @@ class PicModule extends React.Component {
               thumbnails={thumbnails}
               focus={currentIndex}
               idxSync={this.idxSync}
+              modalView={modalView}
             />
           </div>
         </div>

@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const VerticalScroll = ({ thumbnails, focus, idxSync }) => {
+const VerticalScroll = ({
+  thumbnails, focus, idxSync, modalView,
+}) => {
   const picArr = thumbnails;
   const currentFocus = focus;
+  const fullScreen = modalView;
   const [sliceFactor, setSliceFactor] = useState(0, 5);
 
   const clickHandler = (event) => {
@@ -42,17 +45,17 @@ const VerticalScroll = ({ thumbnails, focus, idxSync }) => {
   ));
   const displayItems = listItems.slice(sliceFactor);
   return (
-    <div id="picture-module-vertical-scroll">
-      <button className="vertical-scroll-topClick" type="button" onClick={chevronUpClick}>
+    <div id={fullScreen === true ? 'modal-picture-module-vertical-scroll' : 'picture-module-vertical-scroll'}>
+      <button className={fullScreen === true ? 'modal-vertical-scroll-topClick' : 'vertical-scroll-topClick'} type="button" onClick={chevronUpClick}>
         <svg width="24" height="24" viewBox="0 0 24 24" stroke="#2F3337" fill="#2F3337">
           <title>Chevron Up</title>
           <path d="M22 17L12 7 2 17" stroke="inherit" fill="none" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </button>
-      <div className="picture-module-vertical-scroll-img">
+      <div className={fullScreen === true ? 'modal-picture-module-vertical-scroll-img' : 'picture-module-vertical-scroll-img'}>
         {displayItems}
       </div>
-      <button className="vertical-scroll-bottomClick" type="button" onClick={chevronDownClick}>
+      <button className={fullScreen === true ? 'modal-vertical-scroll-bottomClick' : 'vertical-scroll-bottomClick'} type="button" onClick={chevronDownClick}>
         <svg width="24" height="24" viewBox="0 0 24 24" stroke="#2F3337" fill="#2F3337">
           <title>Chevron Down</title>
           <path d="M2 7l10 10L22 7" stroke="inherit" fill="none" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
@@ -66,6 +69,7 @@ VerticalScroll.propTypes = {
   thumbnails: PropTypes.arrayOf(PropTypes.string).isRequired,
   focus: PropTypes.number.isRequired,
   idxSync: PropTypes.func.isRequired,
+  modalView: PropTypes.bool.isRequired,
 };
 
 export default VerticalScroll;
