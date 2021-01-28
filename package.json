@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node Server/index.js",
     "start-w": "nodemon Server/index.js",
-    "build": "webpack -w",
+    "build": "webpack",
+    "build-w": "webpack -w",
     "test": "jest --coverage",
     "seed": "node database/seed.js"
   },
