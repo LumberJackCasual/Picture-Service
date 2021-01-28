@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const db = mongoose.createConnection('mongodb://172.17.0.2:27017/understock', { useNewUrlParser: true, useUnifiedTopology: true });
+const db = mongoose.createConnection('mongodb://database/understock', { server: { reconnectTries: Number.MAX_VALUE } });
 
 const itemSchema = new mongoose.Schema({
   product_id: Number,

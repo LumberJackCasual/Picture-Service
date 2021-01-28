@@ -1,6 +1,5 @@
 node_modules
 npm-debug.log
 node_modules
-/Client/public/picture_app.js
 process.env
 coverage
