@@ -2,12 +2,12 @@ version: '3'
 
 services:
   picture:
-    image: 'pattyc/fec2021:1'
+    image: 'picture_service2'
     depends_on:
       - 'database'
     ports:
       - '3004:3004'
 
   database:
-    image: mongo
+    image: mongo:latest
 
