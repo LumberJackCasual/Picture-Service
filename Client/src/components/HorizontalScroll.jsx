@@ -42,7 +42,7 @@ const HorizontalScroll = ({
     const x = event.pageX;
     const y = event.pageY;
 
-    let ytop = y - (containY * 1.5);
+    let ytop = y - (containY * 2);
     let xleft = x - (containX * 1.5);
 
     if (ytop <= 0) { ytop = 0; }
