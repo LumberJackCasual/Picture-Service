@@ -35,15 +35,13 @@ const HorizontalScroll = ({
   const mouseMoveHandler = (event) => {
     const spotlight = document.getElementById('zoomLens');
     const zoomPic = document.getElementById('zoomPic');
-    const containX = document.getElementById('picture-module-horizontal-scroll').getBoundingClientRect().left;
-    const containY = document.getElementById('picture-module-horizontal-scroll').getBoundingClientRect().top;
 
     zoomPic.style.backgroundImage = `url(${img})`;
     const x = event.pageX;
     const y = event.pageY;
 
-    let ytop = y - (containY * 2);
-    let xleft = x - (containX * 1.5);
+    let ytop = y - 180;
+    let xleft = x - 450;
 
     if (ytop <= 0) { ytop = 0; }
     if (ytop >= 248) { ytop = 248; }
