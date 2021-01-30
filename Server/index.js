@@ -1,13 +1,13 @@
 /* eslint-disable no-console */
 const express = require('express');
 const bodyParser = require('body-parser');
+const expressStaticGzip = require('express-static-gzip');
 const mongo = require('../database/index.js');
 
 const app = express();
 const port = 3004;
 
 app.use(bodyParser.json());
-app.use(express.static('./Client/public'));
 
 app.use('/', (req, res, next) => {
   console.log(`Now Handling ${req.method} Request from ${req.path}`);
@@ -23,6 +23,11 @@ app.get('/api/picture-service/:id', (req, res) => {
     res.send(docs);
   });
 });
+
+app.use('/', expressStaticGzip('./Client/public', {
+  enableBrotli: true,
+  orderPreference: ['br', 'gz'],
+}));
 
 app.listen(port, () => {
   console.log(`server listening for picture service on port ${port}`);
