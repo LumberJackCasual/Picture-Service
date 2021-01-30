@@ -4,3 +4,5 @@ node_modules
 process.env
 coverage
 picture_app.js
+/Client/public/picture_app.js.br
+/Client/public/picture_app.js.gz
